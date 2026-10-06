@@ -6,7 +6,7 @@
 **原神？启动**
 
 
-插件包名：`dsh-genshin-launch`。当前版本：`1.2.0`。
+
 
 - 自动识别已有原神位置，支持注册表、桌面/开始菜单快捷方式、常见安装目录和启动器 `config.ini`。
 - 找不到时，使用 Windows 文件选择窗口选择 `YuanShen.exe`。
@@ -28,7 +28,7 @@ Windows 10/11、国服原神，以及提供 `conversation.input.right` 插槽的
 下载发布的 `.tgz` 包后，在具有 `dsh` 命令的终端运行：
 
 ```powershell
-dsh plugin --profile desktop add ./dsh-genshin-launch-1.2.0.tgz
+dsh plugin --profile desktop add ./dsh-genshin-launch-1.2.1.tgz
 ```
 
 使用 Web profile 时，将 `desktop` 改为 `web`。若桌面版未把 `dsh` 加入 PATH，请使用安装目录中 `resources/runtime/cli/bin/dsh.cmd` 的完整路径执行同样的参数。
@@ -112,7 +112,7 @@ npm test
 npm pack
 ```
 
-`npm pack` 会生成 `dsh-genshin-launch-1.2.0.tgz`。发布时提供该安装包和对应源代码即可；本机配置、授权结果及个人游戏路径不应包含在发布文件中。
+`npm pack` 会生成 `dsh-genshin-launch-1.2.1.tgz`。发布时提供该安装包和对应源代码即可；本机配置、授权结果及个人游戏路径不应包含在发布文件中。
 
 ## 说明
 

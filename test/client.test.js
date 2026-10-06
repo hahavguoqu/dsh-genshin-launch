@@ -40,6 +40,9 @@ test('native slot button sends an authenticated request and preserves its label'
   assert.equal(app.request().url, '/dsh-genshin-launch/launch');
   assert.equal(app.request().options.method, 'POST');
   assert.equal(app.request().options.headers['X-Dsh-Genshin-Token'], 'boot-token');
+  assert.equal(app.render().children.at(-1), false);
+  await app.find('原神启动').props.onClick();
+  assert.equal(app.render().children.at(-1), false);
 });
 test('not-found screen offers native selection, then one-time setup; website has its own action', async () => {
   const app = mountClient({
@@ -54,6 +57,7 @@ test('not-found screen offers native selection, then one-time setup; website has
   assert.equal(app.request().url, '/dsh-genshin-launch/select');
   await app.find('启用免确认并启动').props.onClick();
   assert.equal(app.request().url, '/dsh-genshin-launch/setup');
+  assert.ok(app.render().children.at(-1));
   await app.find('原神启动').props.onClick();
   await app.find('未安装，打开官网').props.onClick();
   assert.equal(app.request().url, '/dsh-genshin-launch/website');

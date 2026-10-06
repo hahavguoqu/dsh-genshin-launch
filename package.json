@@ -1,6 +1,6 @@
 {
   "name": "dsh-genshin-launch",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "DSH 原神启动：自动检测、选择游戏位置、一键免重复确认启动及官网入口",
   "type": "module",
   "main": "lib/index.js",
