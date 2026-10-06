@@ -1,0 +1,20 @@
+{
+  "name": "dsh-genshin-launch",
+  "version": "1.2.0",
+  "description": "DSH 原神启动：自动检测、选择游戏位置、一键免重复确认启动及官网入口",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": { ".": "./lib/index.js", "./client": "./lib/client.js", "./package.json": "./package.json" },
+  "files": ["lib", "cordis.patch.yml", "README.md", "LICENSE", "setup-task.ps1", "setup.cmd"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-slots"] }
+  },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/hahavguoqu/dsh-genshin-launch.git" },
+  "homepage": "https://github.com/hahavguoqu/dsh-genshin-launch#readme",
+  "bugs": { "url": "https://github.com/hahavguoqu/dsh-genshin-launch/issues" },
+  "os": ["win32"],
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "genshin", "launcher"],
+  "scripts": { "test": "node --test test/launcher.test.js test/client.test.js test/discovery.test.js test/controller.test.js" }
+}
