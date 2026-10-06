@@ -1,19 +1,24 @@
-# DSH 原神启动
+# DSH 原神启动！
+
+<p align="center">
+  <img src="assets/ds.png" alt="鲸鱼娘" width="200">
+</p>
 
 写代码累了？
 
+## 原神？启动！
 
-**原神？启动**
 
 ![DSH 输入框中的原神启动按钮](assets/genshin-launch-button.png)
 
+## 功能
+
+- 自动识别已有原神位置。
+- 找不到时，手动使用 Windows 文件选择窗口选择 `YuanShen.exe`。
+- 如果没有原神？也没有关系！会在默认浏览器打开 <https://ys.mihoyo.com/>。
 
 
-- 自动识别已有原神位置，支持注册表、桌面/开始菜单快捷方式、常见安装目录和启动器 `config.ini`。
-- 找不到时，使用 Windows 文件选择窗口选择 `YuanShen.exe`。
-- 未安装时，点击 **未安装，打开官网**，在默认浏览器打开 <https://ys.mihoyo.com/>。
-- 每位用户的路径保存在本机，无需修改插件源码。
-- 首次通过 Windows 管理员授权创建专用任务，之后启动不再重复弹出权限确认。
+
 ## 支持环境
 
 Windows 10/11、国服原神，以及提供 `conversation.input.right` 插槽的 DSH Desktop 或 Windows DSH Web 宿主。
@@ -23,6 +28,8 @@ Windows 10/11、国服原神，以及提供 `conversation.input.right` 插槽的
 本版本基于 DSH Desktop `0.2.0-rc.2` 验证。DSH 仍可能更新接口，其他版本需自行验证。
 
 **游戏和原生选择窗口在运行 DSH 宿主的电脑上打开。** 通过浏览器访问远程 DSH 时，操作的是宿主电脑。
+
+
 
 ## 安装
 
@@ -36,6 +43,8 @@ dsh plugin --profile desktop add ./dsh-genshin-launch-1.2.1.tgz
 
 完全退出 DSH（包括系统托盘）并重新打开。
 
+
+
 ## 第一次使用
 
 1. 点击 **原神启动**。插件先尝试自动查找游戏。
@@ -48,6 +57,8 @@ dsh plugin --profile desktop add ./dsh-genshin-launch-1.2.1.tgz
 
 自动检测使用有限范围的安装线索，不会遍历整个磁盘。移动游戏或使用特别的安装布局时，可以手动选择。
 
+
+
 ## 如何查找安装位置
 
 插件按以下顺序查找，找到有效的 `YuanShen.exe` 后保存到当前用户的本地配置：
@@ -58,6 +69,8 @@ dsh plugin --profile desktop add ./dsh-genshin-launch-1.2.1.tgz
 4. 检查各个就绪本地固定磁盘上的常见安装目录，以及启动器 `config.ini` 中记录的游戏位置。
 
 这是基于安装线索的规则查找，不会递归扫描整个磁盘。下次使用会优先检查已保存的位置；路径失效时再重新查找。首次检测可能需要几秒，具体取决于硬盘、快捷方式数量及系统环境。查找耗时不包含游戏本身的启动和加载时间。
+
+
 
 ## 常见问题
 
@@ -81,6 +94,8 @@ dsh plugin --profile desktop add ./dsh-genshin-launch-1.2.1.tgz
 
 点击 **未安装，打开官网**，默认浏览器会打开 [原神官网](https://ys.mihoyo.com/)。插件不会自动下载或安装游戏。安装完成后再次点击按钮检测，或手动选择游戏程序。
 
+
+
 ## 本地设置和计划任务
 
 个人路径保存在 `%LOCALAPPDATA%/DSHGenshinLaunch/config.json`，不包含密码或 API 密钥，也不随发布包分发。
@@ -90,6 +105,8 @@ dsh plugin --profile desktop add ./dsh-genshin-launch-1.2.1.tgz
 更换游戏位置后，可能需要重新确认一次授权，以更新任务的程序路径。系统 UAC 设置保持不变。
 
 需要单独修复授权时，可运行插件目录里的 `setup.cmd`。任务设置结果写入 `%LOCALAPPDATA%/DSHGenshinLaunch/setup-result.json`。
+
+
 
 ## 卸载
 
@@ -106,6 +123,8 @@ Unregister-ScheduledTask -TaskName "DeepSeekHarness-GenshinLaunch-$sid" -Confirm
 
 若使用的是 1.1 版本遗留任务，其名称为 `DeepSeekHarness-GenshinLaunch`。
 
+
+
 ## 开发与打包
 
 ```powershell
@@ -114,6 +133,8 @@ npm pack
 ```
 
 `npm pack` 会生成 `dsh-genshin-launch-1.2.1.tgz`。发布时提供该安装包和对应源代码即可；本机配置、授权结果及个人游戏路径不应包含在发布文件中。
+
+
 
 ## 说明
 
