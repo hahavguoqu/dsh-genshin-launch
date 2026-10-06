@@ -5,6 +5,7 @@
 
 **原神？启动**
 
+![DSH 输入框中的原神启动按钮](assets/genshin-launch-button.png)
 
 
 
